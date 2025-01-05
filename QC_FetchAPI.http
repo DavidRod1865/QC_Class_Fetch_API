@@ -1,0 +1,6 @@
+@QC_FetchAPI_HostAddress = http://localhost:5004
+
+GET {{QC_FetchAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
