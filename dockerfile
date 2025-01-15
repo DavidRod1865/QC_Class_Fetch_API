@@ -16,6 +16,29 @@ RUN dotnet publish -c Release -o /app/out
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 
+# Install dependencies and Chrome
+RUN apt-get update && apt-get install -y \
+    wget \
+    unzip \
+    xvfb \
+    libxi6 \
+    libgconf-2-4 \
+    libnss3 \
+    libxss1 \
+    libappindicator1 \
+    libindicator7 \
+    fonts-liberation \
+    libasound2 \
+    libgbm-dev \
+    libgtk-3-0 && \
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+    dpkg -i google-chrome-stable_current_amd64.deb || apt-get -fy install
+
+# Install ChromeDriver
+RUN wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/110.0.5481.3000/chromedriver_linux64.zip && \
+    unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
+    chmod +x /usr/local/bin/chromedriver
+
 # Copy the output from the build stage
 COPY --from=build /app/out .
 
