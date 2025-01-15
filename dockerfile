@@ -1,5 +1,5 @@
 # Use .NET SDK image for build stage
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /app
 
 # Copy project files and restore dependencies
@@ -13,7 +13,7 @@ COPY . ./
 RUN dotnet publish -c Release -o /app/out
 
 # Use .NET Runtime image for runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:9.0
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 
 # Copy the output from the build stage
