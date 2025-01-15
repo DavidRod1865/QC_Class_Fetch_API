@@ -2,9 +2,8 @@ namespace QC_ClassFetch.Services
 {
     public class CheckInput
     {
-        var myCollection = new List<int> { 1, 2, 3 };
-        private static readonly string[] validSemesters = ["Spring", "Summer 1", "Summer 2", "Fall", "Winter"];
-        private static readonly string[] validDepartments = ["ADMIN", "MUSIC", "ACCT", "ACE", "AFST", "AMST", "ANTH", "ART", "BASS", "BIOL", "BALA", "GRKST", "CHEM", "CMAL", "CESL", "CMLIT", "CSCI", "CO-OP", "DRAM", "ECON", "ECP", "EECE", "ENGL", "ELL", "FNES", "LBSCI", "HLL", "HIST", "HNRS", "HTH", "HMNS", "HSS", "IRST", "ITAST", "JEWST", "JOURN", "LABST", "LBLST", "LIBR", "LCD", "MATH", "MEDST", "LEAP", "PHIL", "PHYS", "PSCI", "PSYCH", "RLGST", "SEEK", "SEES", "SEYS", "SOC", "SPST", "STPER", "URBST", "WOMST", "WLDST"];
+        private static readonly string[] validSemesters = {"Spring", "Summer 1", "Summer 2", "Fall", "Winter"};
+        private static readonly string[] validDepartments = {"ADMIN", "MUSIC", "ACCT", "ACE", "AFST", "AMST", "ANTH", "ART", "BASS", "BIOL", "BALA", "GRKST", "CHEM", "CMAL", "CESL", "CMLIT", "CSCI", "CO-OP", "DRAM", "ECON", "ECP", "EECE", "ENGL", "ELL", "FNES", "LBSCI", "HLL", "HIST", "HNRS", "HTH", "HMNS", "HSS", "IRST", "ITAST", "JEWST", "JOURN", "LABST", "LBLST", "LIBR", "LCD", "MATH", "MEDST", "LEAP", "PHIL", "PHYS", "PSCI", "PSYCH", "RLGST", "SEEK", "SEES", "SEYS", "SOC", "SPST", "STPER", "URBST", "WOMST", "WLDST"};
 
         public static string CheckYear(ref string year)
         {
